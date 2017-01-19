@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, Text, StyleSheet, Image, Alert, TouchableOpacity } from 'react-native'
 
 const styles = StyleSheet.create({
   container: {
@@ -35,13 +35,19 @@ const styles = StyleSheet.create({
   },
 })
 
+const onPress = () => {
+  Alert.alert('This navigate to Details')
+}
+
 const Row = (props) => (
   <View style={styles.container}>
     <Image source={{uri: props.image_url}} style={styles.photo} />
     <View style={styles.wrapper}>
+      <TouchableOpacity onPress={this.onPress}>
       <Text style={styles.name}>
         {`${props.name}`}
       </Text>
+      </TouchableOpacity>
       <Text style={styles.address}>
         {`${props.location.address}`}
       </Text>
