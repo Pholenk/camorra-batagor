@@ -20,7 +20,8 @@ export const deletePlace = (key) => {
   currentPlace[`${resource}/${key}`] = null;
   return database.ref().update(deletePlace);
 };
-export const getPlaces = () => database.ref('/places').once('');
+
+export const getPlaces = () => database.ref(`/${resource}`).once('value');
 
 export const addMenuToPlace = (keyPlace, name, price, isFavorite = false) => {
   const newKey = database.ref().child(`/${resource}/${keyPlace}/menus/`).push().key;
