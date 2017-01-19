@@ -83,13 +83,10 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-<<<<<<< HEAD
+
     compileSdkVersion 24
     buildToolsVersion "24.0.3"
-=======
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
->>>>>>> 6f3ec0bbfabfa276a12b9d2daafee890e9bd7894
+
 
     defaultConfig {
         applicationId "com.batagor"
