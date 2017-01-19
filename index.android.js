@@ -9,45 +9,80 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
 
 export default class batagor extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+      <View style = {styles.parentContainer}>
+          <View style = {styles.headerContainer}>
+              <Text style = {styles.headerText}>
+                INI HEADER
+              </Text>
+          </View>
+          <View style = {styles.imageContainer}>
+              <Image source={require('./index.png')}/>
+          </View>
+          <View style = {styles.textContainer}>
+              <Text style = {styles.bodyText}>
+                  Alamat
+              </Text>
+              <Text style = {styles.bodyText}>
+                  jalan bandung no 99
+              </Text>
+          </View>
+          <View style = {styles.imageContainer}>
+              <Image source={require('./index.png')}/>
+          </View>
+          <View style = {styles.textContainer}>
+              <Text style = {styles.bodyText}>
+                  Range Harga :
+              </Text>
+              <Text style = {styles.bodyText}>
+                  0-100
+              </Text>
+          </View>
+    </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  parentContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: 'column',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
+  headerContainer: {
+    //flex: 1,
+    flexDirection: 'row',
+
+    backgroundColor: '#2196f3',
+  },
+  headerText: {
+    padding : 10,
     fontSize: 20,
-    textAlign: 'center',
+
+    alignItems: 'center',
+    color: '#ffffff'
+  },
+  imageContainer: {
+      flex: 1,
+      width: 100
+  },
+  textContainer: {
+      flex: 1,
+      flexDirection: 'row',
+      alignItems: 'center',
+      width: 100
+  },
+  bodyText: {
+    fontSize: 40,
     margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    color: '#ff9800'
+  }
 });
 
 AppRegistry.registerComponent('batagor', () => batagor);
