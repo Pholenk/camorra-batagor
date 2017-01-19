@@ -1,0 +1,3 @@
+rootProject.name = 'batagor'
+
+include ':app'
