@@ -7,4 +7,5 @@ const config = {
   storageBucket: 'camorra-batagor.appspot.com',
 };
 firebase.initializeApp(config);
-export default firebase.database();
+export const database = firebase.database();
+export const storage = firebase.storage();
