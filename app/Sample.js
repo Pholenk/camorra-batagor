@@ -1,9 +1,11 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { writeNewPlace, getPlaces } from './database/places';
+import { addNewPlace, getPlaces } from './database/places';
 
-getPlaces().then((response)=>{
-  console.log(response.val());
+addNewPlace('Rumah Sosis Bandung', {
+  address: 'Hello world', latitude: -6.8167892, longitude: 107.6128168
+}).then((response)=>{
+  console.log(response);
 });
 
 

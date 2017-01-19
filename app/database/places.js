@@ -8,7 +8,12 @@ export const addNewPlace = (name, location = {}) => {
     name,
     location,
   };
-  return database.ref().update(newPlace);
+  return new Promise((resolve, reject) =>
+    database.ref()
+    .update(newPlace)
+    .then(() => resolve(newKey))
+    .catch((err) => reject(err))
+  );
 };
 export const updatePlace = (key, name, location = {}) => {
   const update = {};
