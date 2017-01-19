@@ -12,13 +12,13 @@ export const addNewPlace = (name, location = {}) => {
     database.ref()
     .update(newPlace)
     .then(() => resolve(newKey))
-    .catch((err) => reject(err))
+    .catch((err) => reject(err)),
   );
 };
 export const updatePlace = (key, name, location = {}) => {
   const update = {};
   update[`${resource}/${key}`] = { name, location };
-  return database.ref().update();
+  return database.ref().update(update);
 };
 export const deletePlace = (key) => {
   const currentPlace = {};
