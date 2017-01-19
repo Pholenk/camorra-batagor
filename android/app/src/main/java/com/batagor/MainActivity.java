@@ -1,4 +1,4 @@
-package com.refactory.batagor;
+package com.batagor;
 
 import com.facebook.react.ReactActivity;
 
