@@ -11,8 +11,6 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     flexDirection: 'column',
-    borderWidth: 2,
-    borderColor: 'blue',
     marginLeft: 10,
   },
   name: {
@@ -22,7 +20,6 @@ const styles = StyleSheet.create({
     color: '#08bc43'
   },
   address: {
-    // marginLeft: 12,
     textAlign: 'center',
     fontSize: 15,
   },
