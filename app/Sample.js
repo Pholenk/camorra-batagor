@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { writeNewPlace, readPlaces } from './database/places';
+import { writeNewPlace, getPlaces } from './database/places';
 
-readPlaces().then((response)=>{
+getPlaces().then((response)=>{
   console.log(response.val());
 });
 
