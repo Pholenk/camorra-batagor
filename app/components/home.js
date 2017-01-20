@@ -1,17 +1,105 @@
-import React, { Component } from 'react'
-import { View, Text, TouchableHighlight } from 'react-native'
+import React, { Component } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+  Button,
+  TouchableOpacity
+} from 'react-native';
 
-export default class Home extends Component {
+import BackButton from './detailComponents/BackButton.js'
+import Header from './Header.js'
+import styles from './detailComponents/detailStyles.js'
+import Rating from './detailComponents/Rating.js'
+
+export default class Detail extends Component {
+
+  submit(){
+    alert(this.state.starCount)
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      starCount: 3.5
+    };
+  }
+
+  componentDidMount() {
+    // getPlaces().then((result) => {
+    //   //console.log('received result', result);
+    //   this.setState({
+    //     data: (result),
+    //   })
+    // })
+  }
+
+  onStarRatingPress(rating) {
+    this.setState({
+      starCount: rating
+    });
+  }
+
   render() {
     return (
-      <View style={{
-          flex: 1,
-          marginTop: 20,
-      }}>
-        <TouchableHighlight onPress={() => this.props.navigator.pop()}>
-          <Text>Halaman Detail</Text>
-        </TouchableHighlight>
-      </View>
-    )
+      <ScrollView>
+        <View style={styles.parentContainer}>
+          <View style={styles.forHeaderParentContainer}>
+            <BackButton navigator={this.props.navigator} />
+            <Header />
+          </View>
+          <View style={styles.imageContainer}>
+            <Image source={require('./detailComponents/index.png')}/>
+          </View>
+          <View style={styles.forBodyContainer}>
+            <View style = {styles.iconContainer}>
+              <Image source={require("./detailComponents/place.png")}/>
+            </View>
+            <View style={styles.textContainer}>
+              <Text style={styles.bodyText}>
+                jalan bandung no 99 askfasfa s fsafassa fasfas fasfasf saf
+              </Text>
+            </View>
+          </View>
+          <View style={styles.imageContainer}>
+            <Image source={require('./detailComponents/index.png')}/>
+          </View>
+          <View style={styles.forBodyContainer}>
+            <View style = {styles.iconContainer}>
+              <Image source={require("./detailComponents/menu.png")}/>
+              <Image source={require("./detailComponents/favorite.png")}/>
+            </View>
+            <View style={styles.textContainer}>
+              <Text style={styles.bodyText}>
+                kaos kaki bakar
+              </Text>
+            </View>
+          </View>
+          <View style={styles.forBodyContainer}>
+            <View style = {styles.iconContainer}>
+              <Image source={require("./detailComponents/price.png")}/>
+            </View>
+            <View style={styles.textContainer}>
+              <Text style={styles.bodyText}>
+                0-1000
+              </Text>
+            </View>
+          </View>
+          <View style={styles.ratingContainer}>
+            <Rating star={this.state.starCount} onStarRatingPress={(value)=>this.onStarRatingPress(value)}/>
+            <View style={styles.submitButtonContainer}>
+              <TouchableOpacity onPress={()=>this.submit()}>
+                <Text style={styles.buttonText}>
+                  OK
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+        
+      </ScrollView>
+    );
   }
 }

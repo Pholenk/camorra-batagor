@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 import Main from './Main'
+import Detail from './Detail'
 import Home from './home'
 
 export default class Navigate extends Component {

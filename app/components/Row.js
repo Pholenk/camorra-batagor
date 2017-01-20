@@ -13,8 +13,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     marginLeft: 10,
 
-    borderWidth: 2,
-    borderColor: 'red'
+    // borderWidth: 2,
+    // borderColor: 'red'
   },
   name: {
     textAlign: 'center',
@@ -50,8 +50,8 @@ const Row = (props) => (
           {`${props.name}`}
         </Text>
       </TouchableOpacity>
-        <Text style={styles.address}>
-          {`${props.location.address}`}
+      <Text style={styles.address}>
+        {`${props.location.address}`}
         </Text>
         <Text style={styles.operation}>
           {`${props.operation.start} - ${props.operation.end}`}
