@@ -6,17 +6,12 @@ import {
   Button
 } from 'react-native';
 
-import styles from './detailStyles.js'
+import styles from './detailComponents/detailStyles.js'
 
-export default class content extends Component {
-  //const onPressButton
+export default class Header extends Component {
 
   render() {
     return (
-      //<TouchableOpacity
-      //  onPress={this.onPressButton}>
-
-      //</TouchableOpacity>
       <View style = {styles.headerContainer}>
             <Text style = {styles.headerText}>
                 INI HEADER
