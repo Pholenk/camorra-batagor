@@ -1,35 +1,17 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
   Navigator
 } from 'react-native';
 
-import StarRating from 'react-native-star-rating';
-import Main from './main'
+import Main from './Main'
 import Home from './home'
 
-export default class batagor extends Component {
-  // render() {
-  //   return (
-  //     <View style={styles.container}>
-  //       <Text style={styles.welcome}>
-  //         Welcome to React Native!
-  //       </Text>
-  //       <Text style={styles.instructions}>
-  //         To get started, edit index.android.js
-  //       </Text>
-  //       <Text style={styles.instructions}>
-  //         Double tap R on your keyboard to reload,{'\n'}
-  //         Shake or press menu button for dev menu
-  //       </Text>
-  //     </View>
-  //   );
-  // }
-
+export default class Navigate extends Component {
   renderScene(route, navigator) {
+    console.log('route', route.name)
      if(route.name == 'Main') {
        return <Main navigator={navigator} {...route.passProps} />
      }
@@ -46,7 +28,3 @@ export default class batagor extends Component {
     )
   }
 }
-
-
-
-AppRegistry.registerComponent('batagor', () => batagor);

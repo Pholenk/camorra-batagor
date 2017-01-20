@@ -3,30 +3,56 @@ import {
   StyleSheet,
   Text,
   View,
-  ListView
+  ListView,
+  TouchableOpacity
 } from 'react-native'
 
-import Row from './Row.js'
-// FIXME
-import places from './Places.js'
+import Row from './Row'
+import {getPlaces} from './../database/places'
 
 export default class Main extends Component {
+
   constructor(props) {
     super(props)
-
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
     this.state = {
-      dataSource: ds.cloneWithRows(places),
+      dataSource: null
     }
   }
+
+  componentDidMount() {
+    getPlaces().then((result) => {
+      console.log('received result', result);
+      const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
+      this.setState({
+        dataSource: ds.cloneWithRows(result),
+      })
+    })
+  }
+
+  navigator(name) {
+      this.props.navigator.push({
+        name: 'Home',
+        passProps: {
+          name: name
+        }
+      })
+  }
+
   render() {
     return (
-      <ListView
-        style={styles.container}
-        dataSource={this.state.dataSource}
-        renderRow={(places) => <Row {...places} /> }
-        renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
-      />
+      <View>
+
+
+        {this.state.dataSource ?
+          <ListView
+            dataSource={this.state.dataSource}
+            renderRow={(result) => <Row {...result} navigator={this.props.navigator} /> }
+            renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
+          />
+
+          : <View><Text>Loading..</Text></View>}
+
+      </View>
     );
   }
 }

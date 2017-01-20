@@ -35,26 +35,32 @@ const styles = StyleSheet.create({
   },
 })
 
+import Rating from './Rating'
+
 const onPress = () => {
   Alert.alert('This navigate to Details')
 }
 
+
+
 const Row = (props) => (
   <View style={styles.container}>
+
     <Image source={{uri: props.image_url}} style={styles.photo} />
     <View style={styles.wrapper}>
-      <TouchableOpacity onPress={this.onPress}>
-      <Text style={styles.name}>
-        {`${props.name}`}
-      </Text>
+      <TouchableOpacity onPress={() => props.navigator.push({name: 'Home'})}>
+        <Text style={styles.name}>
+          {`${props.name}`}
+        </Text>
       </TouchableOpacity>
-      <Text style={styles.address}>
-        {`${props.location.address}`}
-      </Text>
-      <Text style={styles.operation}>
-        {`${props.operation.start} - ${props.operation.end} ${props.rating[0]["rating_value"]}`}
-      </Text>
-    </View>
+        <Text style={styles.address}>
+          {`${props.location.address}`}
+        </Text>
+        <Text style={styles.operation}>
+          {`${props.operation.start} - ${props.operation.end}`}
+        </Text>
+        <Rating disable={true}/>
+      </View>
   </View>
 )
 

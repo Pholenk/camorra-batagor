@@ -31,11 +31,11 @@ export default class Rating extends Component {
         alignItems: 'center', //flex-end for main
       }}>
         <StarRating
-          disabled={false}
+          disabled={this.props.disable}
           maxStars={5}
           rating={this.state.starCount}
           starColor={'gold'}
-          starSize={40} //25 for main
+          starSize={25} //25 for main
           selectedStar={(rating) => this.onStarRatingPress(rating)}
         />
       </View>
