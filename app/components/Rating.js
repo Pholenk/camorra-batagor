@@ -26,9 +26,9 @@ export default class Rating extends Component {
     return (
       <View style={{
         flex: 1,
-        flexDirection: 'column', //column for main
-        justifyContent: 'space-between', //primary axis
-        alignItems: 'center', //flex-end for main
+        flexDirection: 'column',
+        justifyContent: 'space-between', 
+        alignItems: 'center',
       }}>
         <StarRating
           disabled={this.props.disable}

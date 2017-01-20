@@ -4,11 +4,13 @@ import {
   Text,
   View,
   ListView,
-  TouchableOpacity
+  TouchableOpacity,
+  ActivityIndicator
 } from 'react-native'
 
 import Row from './Row'
 import {getPlaces} from './../database/places'
+import Splash from './Splash'
 
 export default class Main extends Component {
 
@@ -41,8 +43,6 @@ export default class Main extends Component {
   render() {
     return (
       <View>
-
-
         {this.state.dataSource ?
           <ListView
             dataSource={this.state.dataSource}
@@ -50,7 +50,7 @@ export default class Main extends Component {
             renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
           />
 
-          : <View><Text>Loading..</Text></View>}
+          : <Splash />}
 
       </View>
     );

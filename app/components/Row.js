@@ -12,6 +12,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     marginLeft: 10,
+
+    borderWidth: 2,
+    borderColor: 'red'
   },
   name: {
     textAlign: 'center',
@@ -37,12 +40,6 @@ const styles = StyleSheet.create({
 
 import Rating from './Rating'
 
-const onPress = () => {
-  Alert.alert('This navigate to Details')
-}
-
-
-
 const Row = (props) => (
   <View style={styles.container}>
 
@@ -61,6 +58,7 @@ const Row = (props) => (
         </Text>
         <Rating disable={true}/>
       </View>
+
   </View>
 )
 
