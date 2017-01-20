@@ -13,33 +13,23 @@ import {
 } from 'react-native';
 import Rating from './app/components/Rating'
 import Navigator from './app/components/Navigator'
+import MapLocation from './app/components/MapLocation'
+// import MapView from 'react-native-maps';
 
 export default class batagor extends Component {
+
+  onRegionChange(region) {
+    this.setState({ region });
+  }
+
   render() {
     return (
-      <Navigator/>
+      // <Navigator/>
       // <Rating/>
+      <MapLocation />
+
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('batagor', () => batagor);
