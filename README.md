@@ -3,7 +3,7 @@ Cammora App
 This is a Listing app directory for culinary app in Bandung City.
 
 ### Contributor
-  [Mgufrone] (https://github.com/mgufrone)
+- [Mgufrone] (https://github.com/mgufrone)
 - [Kris] (https://github.com/kristoforusrp)
 - [Sutani] (https://github.com/sutani)
 - [Rafi] (https://github.com/rafi-isakh)
