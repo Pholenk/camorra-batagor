@@ -9,7 +9,7 @@ import {
 
 import Main from './Main'
 import Home from './home'
-import Detail from '../detail'
+import Detail from './Detail'
 
 
 export default class Navigate extends Component {

@@ -44,7 +44,7 @@ export default class Main extends Component {
   render() {
     return (
       <View style={{flexDirection: 'column'}}>
-        <View><Header /></View>
+        
         {this.state.dataSource ?
           <ListView
             dataSource={this.state.dataSource}
