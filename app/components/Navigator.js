@@ -8,8 +8,9 @@ import {
 } from 'react-native';
 
 import Main from './Main'
-import Detail from './Detail'
 import Home from './home'
+import Detail from '../detail'
+
 
 export default class Navigate extends Component {
   componentDidMount() {
@@ -44,6 +45,7 @@ var RouteMapper = function(route, navigator) {
       );
       break;
       case 'Home':
+      //case 'Detail':
         return (
           <Home
             navigator={navigator} {...route.passProps} />
